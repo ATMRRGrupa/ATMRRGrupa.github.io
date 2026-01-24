@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>ATMR:R — Stream</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "hls.js": "https://esm.sh/v114/hls.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <header class="header">
+      <img src="/atmr_logo.png" alt="ATM Rozrywka" class="logo" />
+      <div class="title-text">ATM Rozrywka: REWORK</div>
+    </header>
+
+    <section class="player-wrap">
+      <div class="video-container">
+        <video id="video" playsinline controls></video>
+        <div id="overlay" class="overlay">
+          <button id="playBtn" class="big-btn" aria-label="Odtwórz">▶</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="muteBtn" class="small-btn" aria-label="Wycisz">🔊</button>
+        <button id="qualityBtn" class="small-btn" aria-label="Jakość">AUTO</button>
+      </div>
+    </section>
+
+    <section class="schedule">
+      <h3>Program</h3>
+      <div id="programList" class="working">Jeszcze nad tym pracujemy!</div>
+    </section>
+
+    <section class="info-section">
+      <h3>Informacje</h3>
+      <div class="info-card">
+        <p class="lead">🎬 ATM Rozrywka powraca! 🎉</p>
+        <p>Tak jest, ludzie – kanał, który kochacie, wraca na żywo!<br>
+        Automatycznie odpalamy OBS + MediaMTX + stream, żebyście mogli oglądać bez stresu. 🔥</p>
+        <p>Nie martwcie się o EPG – będzie wiadomo, co leci i kiedy.<br>
+        Przygotujcie popcorn 🍿, napoje 🥤 i włączcie kanał – ATM Rozrywka wraca do akcji!</p>
+        <p class="hashtags">#PowrótKanału #StreamTime #ATMrozrywka</p>
+        <div class="info-actions">
+          <a class="discord-btn" href="https://dc.gg/ATMRR" target="_blank" rel="noopener">Dołącz na Discord</a>
+          <a class="youtube-btn" href="https://www.youtube.com/@ATMRozrywkaREWORK" target="_blank" rel="noopener">Obserwuj na YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Transmisja: ATMR:R — odtwarzacz HLS</small>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
