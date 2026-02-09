@@ -1,6 +1,6 @@
 import Hls from "hls.js";
 
-const STREAM_URL = "https://verde-excluding-suppose-nathan.trycloudflare.com/ATMRR/index.m3u8";
+const STREAM_URL = "https://thank-yukon-snapshot-send.trycloudflare.com/ATMRR/index.m3u8";
 
 const video = document.getElementById("video");
 const playBtn = document.getElementById("playBtn");
