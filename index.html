@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>ATM Rozrywka: REWORK</title>
+</head>
+<body>
+  <div id="app">
+    <header id="masthead" role="banner" aria-hidden="false">
+      <div id="show-info">
+        <img id="logo" alt="Logo programu" src="ATMR logo.webp" onerror="this.style.display='none'"/>
+        <div id="titles">
+          <div id="show-title">ATM Rozrywka: REWORK</div>
+          <div id="show-sub">Revival wcześniejszego ATM Rozrywka</div>
+        </div>
+      </div>
+      <div id="controls">
+        <button id="fullscreen" title="Pełny ekran" aria-label="Pełny ekran">⤢</button>
+
+        <!-- Social buttons -->
+        <a class="icon-btn" id="discord-link" href="https://dc.gg/ATMRR" target="_blank" rel="noopener" title="Discord — ATMRR" aria-label="Discord — ATMRR">
+          <!-- try a local PNG first (discord.png). If not present, fall back to the external SVG -->
+          <img id="discord-icon" src="discord.png" alt="Discord" style="width:20px;height:20px;display:block;object-fit:contain"/>
+          <script>
+            // If local PNG fails to load, replace with the external SVG URL.
+            (function(){
+              const img = document.getElementById('discord-icon');
+              img.addEventListener('error', ()=> {
+                img.src = 'https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg';
+                img.style.filter = 'invert(1)'; // keep contrast on dark backgrounds
+              }, {once:true});
+            })();
+          </script>
+        </a>
+
+        <a class="icon-btn" id="youtube-link" href="https://youtube.com/@ATMRozrywkaREWORK" target="_blank" rel="noopener" title="YouTube — ATMRozrywkaREWORK" aria-label="YouTube — ATMRozrywkaREWORK">
+          <!-- simple SVG YouTube play icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2c-.2-1.6-1.5-2.9-3.1-3.1C18.1 2.8 12 2.8 12 2.8s-6.1 0-8.4.3C2.1 3.3.9 4.6.7 6.2.3 8.6.3 12 .3 12s0 3.4.4 5.8c.2 1.6 1.5 2.9 3.1 3.1 2.3.3 8.4.3 8.4.3s6.1 0 8.4-.3c1.6-.2 2.9-1.5 3.1-3.1.4-2.4.4-5.8.4-5.8s0-3.4-.4-5.8zM9.7 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="player-wrap" aria-label="Odtwarzacz programu">
+        <iframe id="player" src="player.html" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+        <div id="player-overlay" aria-hidden="true">
+          <button id="play-episode" class="big-btn">▶ Odtwórz</button>
+        </div>
+      </section>
+
+      <aside id="sidebar" aria-label="EPG">
+        <div class="panel-title">EPG</div>
+        <ul id="episodes" role="list">
+          <li data-src="player.html?ep=1"><button>Jeszcze nad tym pracujemy!</button></li>
+        </ul>
+
+        <div class="panel-title">Opis</div>
+        <div id="description">
+          To jest projekt odtwarzania i modernizacji strumienia telewizyjnego ATM Rozrywka w wersji internetowej — zbudowany w oparciu o własną infrastrukturę streamingową (MediaMTX + OBS + fallback z plików MP4).
+        </div>
+      </aside>
+    </main>
+
+    <footer id="footer" role="contentinfo" aria-hidden="true"></footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
