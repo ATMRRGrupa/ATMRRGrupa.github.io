@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>ATM Rozrywka: REWORK</title>
+</head>
+<body>
+  <div id="app">
+    <header id="masthead" role="banner" aria-hidden="false">
+      <div id="show-info">
+        <img id="logo" alt="Logo programu" src="ATMR logo.jpg" onerror="this.style.display='none'"/>
+        <div id="titles">
+          <div id="show-title">ATM Rozrywka: REWORK</div>
+          <div id="show-sub">Revival wcześniejszego ATM Rozrywka</div>
+        </div>
+      </div>
+      <div id="controls">
+        <button id="fullscreen" title="Pełny ekran" aria-label="Pełny ekran">⤢</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="player-wrap" aria-label="Odtwarzacz programu">
+        <iframe id="player" src="player.html" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+        <div id="player-overlay" aria-hidden="true">
+          <button id="play-episode" class="big-btn">▶ Odtwórz</button>
+        </div>
+      </section>
+
+      <aside id="sidebar" aria-label="EPG">
+        <div class="panel-title">EPG</div>
+        <ul id="episodes" role="list">
+          <li data-src="player.html?ep=1"><button>Jeszcze nad tym pracujemy!</button></li>
+        </ul>
+
+        <div class="panel-title">Opis</div>
+        <div id="description">
+          To jest projekt odtwarzania i modernizacji strumienia telewizyjnego ATM Rozrywka w wersji internetowej — zbudowany w oparciu o własną infrastrukturę streamingową (MediaMTX + OBS + fallback z plików MP4).
+        </div>
+      </aside>
+    </main>
+
+    <footer id="footer" role="contentinfo" aria-hidden="true"></footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
